@@ -5,6 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "build": "npm run less && webpack",
+    "dev": "concurrently \"webpack -w\" \"nodemon server/index.js\"",
     "start": "node server/index.js",
     "less": "lessc src/css/style.less dist/css/style.css",
     "lint": "eslint .",
@@ -19,7 +20,7 @@
     "json-loader": "^0.5.4",
     "lodash": "^4.17.10",
     "lodash-webpack-plugin": "^0.10.2",
-    "morgan": "^1.9.0",
+    "morgan": "^1.9.1",
     "nightmare": "^3.0.1",
     "nightmare-react-utils": "^1.0.4",
     "react": "^15.3.2",
