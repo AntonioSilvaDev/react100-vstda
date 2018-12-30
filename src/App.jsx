@@ -34,15 +34,15 @@ constructor(props){
     });
   }
 
-  clickHandler(createTodoText, createTodoPriority, todoItems, createTodoId, color, isEditEnabled, updateTodoPriority, todoComplete){
-    createTodoText = this.state.createTodoText;
-    createTodoPriority = this.state.createTodoPriority;
-    todoItems = this.state.todoItems;
-    createTodoId = this.state.createTodoId;
-    color = this.state.color;
-    isEditEnabled = this.state.isEditEnabled;
-    updateTodoPriority = this.state.updateTodoPriority;
-    todoComplete = this.state.todoComplete;
+  clickHandler(){
+    const createTodoText = this.state.createTodoText;
+    const createTodoPriority = this.state.createTodoPriority;
+    const todoItems = this.state.todoItems;
+    const createTodoId = this.state.createTodoId;
+    let color = this.state.color;
+    const isEditEnabled = this.state.isEditEnabled;
+    const updateTodoPriority = this.state.updateTodoPriority;
+    const todoComplete = this.state.todoComplete;
     
     if(createTodoPriority === "1" || updateTodoPriority === "1"){
       color = "list-group-item list-group-item-success"
@@ -88,8 +88,6 @@ constructor(props){
           isEditEnabled: false
           })
     }
-
-    
   }
 
   deleteClick(id){
@@ -111,8 +109,6 @@ constructor(props){
   }
 
    todoCompleteClick(id){
-     console.log(id);
-     console.log("id.todoComplete",id.todoComplete);
      let style = {textDecoration: 'none'};//still want to work on getting strikethrough to work onclick, but moving on now
 
      if(id.todoComplete){
@@ -123,14 +119,8 @@ constructor(props){
        id.todoComplete = true;
        style = {textDecoration: 'line-through'};
      }
-
-     console.log(id.todoComplete);
-     console.log(id.createTodoText);
-     console.log(id);
-
    } 
   
-
   render() {
     return (
       <div className="container">
